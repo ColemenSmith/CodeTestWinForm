@@ -39,6 +39,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbImageCheckBox1 = new System.Windows.Forms.CheckBox();
+            this.pbImageCheckBox3 = new System.Windows.Forms.CheckBox();
+            this.pbImageCheckBox2 = new System.Windows.Forms.CheckBox();
+            this.pbImageCheckBox4 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -143,11 +147,56 @@
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
+            // pbImageCheckBox1
+            // 
+            this.pbImageCheckBox1.AutoSize = true;
+            this.pbImageCheckBox1.Location = new System.Drawing.Point(338, 204);
+            this.pbImageCheckBox1.Name = "pbImageCheckBox1";
+            this.pbImageCheckBox1.Size = new System.Drawing.Size(64, 17);
+            this.pbImageCheckBox1.TabIndex = 12;
+            this.pbImageCheckBox1.Text = "Image 1";
+            this.pbImageCheckBox1.UseVisualStyleBackColor = true;
+            this.pbImageCheckBox1.CheckedChanged += new System.EventHandler(this.pbImageCheckBox1_CheckedChanged);
+            // 
+            // pbImageCheckBox3
+            // 
+            this.pbImageCheckBox3.AutoSize = true;
+            this.pbImageCheckBox3.Location = new System.Drawing.Point(338, 378);
+            this.pbImageCheckBox3.Name = "pbImageCheckBox3";
+            this.pbImageCheckBox3.Size = new System.Drawing.Size(64, 17);
+            this.pbImageCheckBox3.TabIndex = 13;
+            this.pbImageCheckBox3.Text = "Image 3";
+            this.pbImageCheckBox3.UseVisualStyleBackColor = true;
+            // 
+            // pbImageCheckBox2
+            // 
+            this.pbImageCheckBox2.AutoSize = true;
+            this.pbImageCheckBox2.Location = new System.Drawing.Point(576, 204);
+            this.pbImageCheckBox2.Name = "pbImageCheckBox2";
+            this.pbImageCheckBox2.Size = new System.Drawing.Size(64, 17);
+            this.pbImageCheckBox2.TabIndex = 14;
+            this.pbImageCheckBox2.Text = "Image 2";
+            this.pbImageCheckBox2.UseVisualStyleBackColor = true;
+            // 
+            // pbImageCheckBox4
+            // 
+            this.pbImageCheckBox4.AutoSize = true;
+            this.pbImageCheckBox4.Location = new System.Drawing.Point(576, 378);
+            this.pbImageCheckBox4.Name = "pbImageCheckBox4";
+            this.pbImageCheckBox4.Size = new System.Drawing.Size(64, 17);
+            this.pbImageCheckBox4.TabIndex = 15;
+            this.pbImageCheckBox4.Text = "Image 4";
+            this.pbImageCheckBox4.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pbImageCheckBox4);
+            this.Controls.Add(this.pbImageCheckBox2);
+            this.Controls.Add(this.pbImageCheckBox3);
+            this.Controls.Add(this.pbImageCheckBox1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -184,6 +233,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.CheckBox pbImageCheckBox1;
+        private System.Windows.Forms.CheckBox pbImageCheckBox3;
+        private System.Windows.Forms.CheckBox pbImageCheckBox2;
+        private System.Windows.Forms.CheckBox pbImageCheckBox4;
     }
 }
 

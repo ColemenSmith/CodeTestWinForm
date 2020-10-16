@@ -1,18 +1,10 @@
-﻿using System;
+﻿using Syncfusion.Presentation;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
-using Google.Apis.Customsearch.v1;
-using Google.Apis.Services;
-using OfficeOpenXml.FormulaParsing.Excel.Functions.Text;
-using Syncfusion.Presentation;
 
 namespace CodeTestWinForm
 {
@@ -49,6 +41,34 @@ namespace CodeTestWinForm
             IShape descriptionShape = slide.AddTextBox(53.22, 141.73, 874.19, 77.70);
             descriptionShape.TextBody.Text = textAreaTextBox.Text;
 
+            //Add image to slide from image URL
+            WebClient myWebClient = new WebClient();
+            //checking which images want to be used
+            if (pbImageCheckBox1.Checked == true)
+            {
+                byte[] image1 = myWebClient.DownloadData(pbImageCheckBox1.Text);
+                Stream imageStream1 = new MemoryStream(image1);
+                slide.Shapes.AddPicture(imageStream1, 100, 238.59, 364.54, 192.16);
+            }
+            if (pbImageCheckBox2.Checked == true)
+            {
+                byte[] image2 = myWebClient.DownloadData(pbImageCheckBox2.Text);
+                Stream imageStream2 = new MemoryStream(image2);
+                slide.Shapes.AddPicture(imageStream2, 300, 238.59, 364.54, 192.16);
+            }
+            if (pbImageCheckBox3.Checked == true)
+            {
+                byte[] image3 = myWebClient.DownloadData(pbImageCheckBox3.Text);
+                Stream imageStream3 = new MemoryStream(image3);
+                slide.Shapes.AddPicture(imageStream3, 500, 238.59, 364.54, 192.16);
+            }
+            if (pbImageCheckBox4.Checked == true)
+            {
+                byte[] image4 = myWebClient.DownloadData(pbImageCheckBox4.Text);
+                Stream imageStream4 = new MemoryStream(image4);
+                slide.Shapes.AddPicture(imageStream4, 700, 238.59, 364.54, 192.16);
+            }
+
             //Save the PowerPoint Presentation 
             pptxDoc.Save("Sample.pptx");
 
@@ -76,9 +96,11 @@ namespace CodeTestWinForm
 
         private void btnLookup_Click(object sender, EventArgs e)
         {
+            //extracting images from google based on text in titleTextBox
             var str = titleTextBox.Text;
             var extractedData = ImageGrabber.ExtractCustomSearchData(str);
 
+            //taking images from extractedData and putting them into a list of results for easier access
             List<string> results = new List<string>();
             int count = 0;
             foreach (var data in extractedData)
@@ -87,14 +109,27 @@ namespace CodeTestWinForm
                 count++;
             }
 
+            //putting image and link into pb1 and check box below
+            pbImageCheckBox1.Text = results[0];
             pbImage.Load(results[0]);
             pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            //putting image and link into pb2 and text box below
+            pbImageCheckBox2.Text = results[1];
             pictureBox1.Load(results[1]);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            //putting image and link into pb3 and text box below
+            pbImageCheckBox3.Text = results[2];
             pictureBox2.Load(results[2]);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            //putting image and link into pb4 and text box below
+            pbImageCheckBox4.Text = results[3];
             pictureBox3.Load(results[3]);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            
+        }
+
+        private void pbImageCheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }
