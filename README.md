@@ -18,3 +18,9 @@ select images and then feed them into the ppt slide.
 I can't run anymore tests today though because I reached my limit of usage on the API. So I'm 
 messing around with code to find out how to feed those images to the ppt slide and then see if the 
 code works when I get to use the API again.
+
+# 10/16/2020
+Picked up where I left off yesterday. Did a lot of research on finding the best way to feed the images into the
+ppt slide. I decided to use checkboxes to dynamically change the text into the url and then feed that url to be loaded
+on the ppt slide. I also went through and did some commenting to show what was going on in the code for visual clarity.
+Proud to show what I got done, it is a bit clunky but I got it done. 
